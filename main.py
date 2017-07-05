@@ -21,6 +21,8 @@ clock = pygame.time.Clock()
 
 Tony = player.Player(5)
 
+Tony.move(7, 0)
+
 # Game loop
 while 1:
     # keep loop running at the right speed
@@ -32,8 +34,9 @@ while 1:
             pygame.quit()
 
     # Update
-    Tony.move(1,0)
+    screen.fill(BLACK)
     Tony.update(screen)
+
     # Draw / render
 
     # *after* drawing everything, flip the display
