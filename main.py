@@ -1,5 +1,5 @@
-
 import pygame
+import player
 
 WIDTH = 360
 HEIGHT = 480
@@ -19,6 +19,9 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("My Game")
 clock = pygame.time.Clock()
 
+Tony = player.Player(5)
+
+print(Tony.hearts)
 
 # Game loop
 while 1:
