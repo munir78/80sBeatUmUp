@@ -1,8 +1,8 @@
 import pygame
 import player
 
-WIDTH = 360
-HEIGHT = 480
+WIDTH = 1280
+HEIGHT = 720
 FPS = 60
 
 # define colors
@@ -21,8 +21,6 @@ clock = pygame.time.Clock()
 
 Tony = player.Player(5)
 
-print(Tony.hearts)
-
 # Game loop
 while 1:
     # keep loop running at the right speed
@@ -34,8 +32,9 @@ while 1:
             pygame.quit()
 
     # Update
-
+    Tony.move(1,0)
+    Tony.update(screen)
     # Draw / render
-    screen.fill(BLACK)
+
     # *after* drawing everything, flip the display
     pygame.display.flip()
