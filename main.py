@@ -21,8 +21,6 @@ clock = pygame.time.Clock()
 
 Tony = player.Player(5)
 
-Tony.move(7, 0)
-
 # Game loop
 while 1:
     # keep loop running at the right speed
@@ -32,6 +30,14 @@ while 1:
         # check for closing window
         if event.type == pygame.QUIT:
             pygame.quit()
+
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_w]:
+        Tony.jump(-2)
+    if keys[pygame.K_d]:
+        Tony.move(1)
+    if keys[pygame.K_a]:
+        Tony.move(-1)
 
     # Update
     screen.fill(BLACK)
