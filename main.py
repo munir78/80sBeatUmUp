@@ -61,4 +61,4 @@ while running:
     # *after* drawing everything, flip the display
     pygame.display.flip()
 
-pygame.quit())
+pygame.quit()
