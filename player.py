@@ -1,15 +1,12 @@
 import pygame
 class Player:
 
-    hearts = 0
     x = 200
     y = 300
     dx = 0
     dy = 0
     falling = False
 
-    def __init__(self, hearts):
-        self.hearts = hearts
 
     def update(self, screen):
         self.x += self.dx

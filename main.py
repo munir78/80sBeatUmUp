@@ -1,9 +1,7 @@
 import pygame
-import player
 
 WIDTH = 1280
 HEIGHT = 720
-FPS = 60
 
 # define colors
 WHITE = (255, 255, 255)
@@ -11,39 +9,26 @@ BLACK = (0, 0, 0)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
-
 # initialize pygame and create window
 pygame.init()
-pygame.mixer.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("My Game")
 clock = pygame.time.Clock()
 
-Tony = player.Player(5)
-
+x_val = 150
+y_val = 200
 # Game loop
-while 1:
-    # keep loop running at the right speed
-    clock.tick(FPS)
-    # Process input (events)
+done = False
+while not done:
+    ## Inputs go here
     for event in pygame.event.get():
-        # check for closing window
         if event.type == pygame.QUIT:
-            pygame.quit()
-
-    keys = pygame.key.get_pressed()
-    if keys[pygame.K_w]:
-        Tony.jump(-2)
-    if keys[pygame.K_d]:
-        Tony.move(1)
-    if keys[pygame.K_a]:
-        Tony.move(-1)
-
-    # Update
+         done = True
+## Game logic goes in here
     screen.fill(BLACK)
-    Tony.update(screen)
 
-    # Draw / render
-
-    # *after* drawing everything, flip the display
+## Draw here
+    pygame.draw.rect(screen, WHITE, (x_val, y_val, 20, 20))
     pygame.display.flip()
+    clock.tick(60)
+pygame.quit()
