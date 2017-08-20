@@ -23,7 +23,7 @@ class Player(pg.sprite.Sprite):
             self.vel.y = -20
 
     def update(self):
-        self.acc = vec(0, Gravity)
+        self.acc = vec(0, Gravity)#continuous acceleration down
         keys = pg.key.get_pressed()
         if keys[pg.K_LEFT]:
             self.acc.x = -PLAYER_ACC

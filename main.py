@@ -43,7 +43,15 @@ class Game:
             if hits:
                 self.player.pos.y = hits[0].rect.top
                 self.player.vel.y = 0
-
+        #if player reaches the 1/4 of the screen, the page should move across
+        if self.player.rect.right >= 2 * WIDTH / 3:
+            self.player.pos.x -= max(abs(self.player.vel.x), 2)
+            for plat in self.platforms:
+                plat.rect.right -= max(abs(self.player.vel.x), 2)
+        if self.player.rect.left <= 2 *WIDTH /3:
+            self.player.pos.x += max(abs(self.player.vel.x), 2)
+            for plat in self.platforms:
+                plat.rect.right += max(abs(self.player.vel.x), 2)
     def events(self):
         # Game Loop - events
         for event in pg.event.get():
